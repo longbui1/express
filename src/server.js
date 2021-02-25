@@ -3,7 +3,7 @@ const path = require('path');
 var cookieParser = require('cookie-parser')
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT
+const listenPORT = process.env.LISTENPORT
 const methodOverride = require('method-override')
 
 // cors setting
@@ -67,6 +67,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`)
+app.listen(process.env.PORT || listenPORT, () => {
+  console.log(`Example app listening at http://localhost:${listenPORT}`)
 })
