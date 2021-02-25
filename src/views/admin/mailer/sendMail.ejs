@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact us</title>
+    <link rel="stylesheet" type="text/css" href="../../css/sendMail.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="contact-box">
+            <div class="left"></div>
+            <div class="right">
+                <h2>Information Us</h2>
+                <form onsubmit="sendMail(event)" id="form_Submit" method="POST" action="/dashboard/sendEmail">
+                    <input type="email" name="toEmail" id="toEmail" class="field" placeholder="Customer Email">
+                    <input type="text" name="subject" id="subject" class="field" placeholder="Subject">
+                    <textarea placeholder="Message" name="message" id="message" class="field"></textarea>
+                    <button class="btn">Send</button>
+                </form>
+                <span id="showBug"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/mailer/sendMail.js"></script>
+</body>
+
+
+
+</html>

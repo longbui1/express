@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="../../images/dashboard/AT-pro-logo.png" />
+
+    <!-- Import lib -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="../../fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- End import lib -->
+
+    <link rel="stylesheet" type="text/css" href="../../css/adminDashboard.css">
+    <link rel="stylesheet" type="text/css" href="../../css/products.css">
+</head>
+
+<body class="overlay-scrollbar">
+    <!-- navbar -->
+    <%- include('../../partials/header.ejs'); %>
+        <!-- sidebar -->
+        <%- include('../../partials/menu.ejs'); %>
+            <!-- main -->
+            <div class="container_products">
+                <div class="container">
+                    <div class="nav-bars">
+                        <div class="box-left">
+                            <h1>PRODUCTS <span>MANAGERS</span></h1>
+                        </div>
+                        <!-- <a href="http://localhost:3000/dashboard/products?aaa">laptop</a> -->
+                        <div class="box-right">
+                            <div class="export_find">
+                                <input type="name" name="">
+                            </div>
+                            <div>
+                                <div class="box add_new-user">
+                                    <span onclick="deleteAllProducts()">Xóa Hết</span>
+                                </div>
+                            </div>
+                            <div class="box add_new-user">
+                                <a href="addBrands">New Products</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <table style="width:100%">
+                            <tr>
+                                <th>STT</th>
+                                <th>NAME</th>
+                                <th>IMAGES</th>
+                            </tr>
+                            <% var stt=1 %>
+                                <% array.map((item) =>{%>
+                                    <tr>
+                                        <td style="display: none;">
+                                            <input class="getValuesDeleteAll" type="text" value="<%= item._id %>">
+                                        </td>
+                                        <td class="td_box">
+                                            <p class="td_text">
+                                                <%= stt++%>
+                                            </p>
+                                        </td>
+                                        <td class="td_box">
+                                            <p class="td_text" id="td_name">
+                                                <%= item.brand_name %>
+                                            </p>
+                                        </td>
+                                        <td><img src="../../../../images/products/<%= item.image %>" alt="product" width="100px" height="50px"> </td>             
+                                        <td id="pen_delete">
+                                            <a href="updatebrands/<%= item._id %>"> <i id="color-yellow" class="fas fa-pen"></i></a>
+                                            <i id="color-red" onclick="deleteProducts('<%= item._id %>')" class="fas fa-trash"></i>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="../../../js/brands/deleteAllBrands.js"></script>
+            <script src="../../js/products/updateProducts.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+            <script src="../../js/adminDashboard.js"></script>
+            <script src="../../../js/brands/deleteBrands.js"></script>
+</body>
+
+</html>

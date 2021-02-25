@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="../../images/dashboard/AT-pro-logo.png" />
+
+    <!-- Import lib -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="../../fontawesome-free/css/all.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+    <!-- End import lib -->
+
+    <link rel="stylesheet" type="text/css" href="../../css/adminDashboard.css">
+    <link rel="stylesheet" href="../../css/addProducts.css">
+</head>
+
+<body class="overlay-scrollbar">
+    <!-- navbar -->
+    <%- include('../../partials/header.ejs'); %>
+        <!-- end navbar -->
+        <!-- sidebar -->
+        <%- include('../../partials/menu.ejs'); %>
+            <!-- end sidebar -->
+            <!-- main content -->
+
+            <form class="form_addProducts" onsubmit="handleSubmit(event)" id="newForm">
+
+                <div class="add">
+                    <label><h2>ADD BRANDS</h2></label>
+
+                    <div class="product">
+                        <!-- img -->
+                        <div class="product-left">
+                            <input type="file" name="image" id="image" class="uploadAdmin">
+                        </div>
+                        <div id="result"></div>
+                        <!-- add product -->
+                        <div class="product-right">
+
+                            <!--  -->
+                            <h4>BRAND NAME</h4>
+                            <input type="text" name="name" id="name">
+                            
+                            <button class="button">ADD BRAND NOW <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+            <script src="../../js/adminDashboard.js"></script>
+            <script src="../../js/brands/addBrands.js"></script>
+            <!-- end import script -->
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/dashboard/AT-pro-logo.png" />
+
+    <!-- Import lib -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free/css/all.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+    <!-- End import lib -->
+    <link rel="stylesheet" type="text/css" href="/css/adminDashboard.css">
+    <link rel="stylesheet" href="/css/updateProducts.css">
+</head>
+
+<body class="overlay-scrollbar">
+    <!-- navbar -->
+    <%- include('../partials/header.ejs'); %>
+        <!-- end navbar -->
+        <!-- sidebar -->
+        <%- include('../partials/menu.ejs'); %>
+            <!-- end sidebar -->
+            <!-- main content -->
+
+            <form class="form_addProducts" onsubmit="updateProduct(event)" id="newForm">
+
+                <div class="add">
+                    <label><h2>UPDATE PRODUCT</h2></label>
+
+                    <div class="product">
+                        <!-- img -->
+                        <div class="product-left">
+                            <input type="file" name="image" id="image" class="uploadAdmin">
+                        </div>
+                        <div id="result"></div>
+                        <!-- add product -->
+                        <div class="product-right">
+
+                            <!--  -->
+                            <h4>Product Name</h4>
+                            <input type="text" name="name" id="name">
+                            <h4>Description</h4>
+                            <!--  -->
+                            <textarea name="description" id="description"></textarea>
+                            <!--  -->
+                            <h4>Price</h4>
+                            <input type="number" name="price" id="price">
+                            <!--  -->
+                            <div class="choose">
+                                <div class="choose-left">
+                                    <h4>Category</h4>
+                                    <select name="category_id" id="category_id">
+                                        <option value="">-- Chọn loại sản phẩm ---</option>
+                                        <option value="LapTop|5faac7e95f50895151ab558a">LapTop</option>
+                                        <option value="Điện Thoại|5fb8c550e2bb3902f6416894" >Điện Thoại</option>
+                                        <option value="Đồng Hồ|5fcafb3afbae801cdfd2eb53" >Đồng Hồ</option>
+                                        <option value="Tai Nghe|5fcafb59fbae801cdfd2eb54" >Tai Nghe</option>
+                                    </select>
+                                </div>
+                                <!--  -->
+                                <div class="choose-right">
+                                    <h4>Brand</h4>
+                                    <select name="brand_id" id="brand_id">
+                                        <option value="">-- Chọn thương hiệu ---</option>
+                                        <option value="Dell|5faac6a85226b5223cae855a">Dell</option>
+                                        <option value="Apple|5fb8c6cce2bb3902f6416895" >Apple</option>
+                                        <option value="Casio|5fcafefcfbae801cdfd2eb55" >Casio</option>
+                                        <option value="Sony|5fcaff1afbae801cdfd2eb56" >Sony</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="button">edit PRODUCT NOW <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+            <script src="/js/adminDashboard.js"></script>
+            <script src="/js/products/updateProducts.js"></script>
+            <!-- end import script -->
+</body>
+
+</html>
