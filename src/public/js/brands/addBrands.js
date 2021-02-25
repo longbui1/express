@@ -18,7 +18,7 @@ async function handleSubmit(event) {
         result.innerHTML = "vui lòng nhập đủ dữ liệu";
     } else {
         try {
-            const res = await axios.post('http://localhost:3000/brands', formData, {
+            const res = await axios.post('https://tranducbo.herokuapp.com/brands', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

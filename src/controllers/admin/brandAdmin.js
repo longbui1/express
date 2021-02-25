@@ -3,7 +3,7 @@ const axios = require('axios');
 //admin product 
 const index = async (req, res) => {
   try {
-    const { data } = await axios.get('http://localhost:3000/brands')
+    const { data } = await axios.get('https://tranducbo.herokuapp.com/brands')
     res.render('admin/pages/brand/brand', { array: data });
   } catch (err) {
     console.log(err)

@@ -30,7 +30,7 @@ form.addEventListener("submit", async(event) => {
     const password = form.password.value
 
     try {
-        const res = await fetch('http://localhost:3000/rhino-admin', {
+        const res = await fetch('https://tranducbo.herokuapp.com/rhino-admin', {
             method: 'POST',
             body: JSON.stringify({
                 "user_name": userName,
@@ -42,7 +42,7 @@ form.addEventListener("submit", async(event) => {
         })
         const data = await res.json()
         if (data.admin) {
-            location.assign('http://localhost:3000/dashboard')
+            location.assign('https://tranducbo.herokuapp.com/dashboard')
         }
     } catch (err) {
         console.log(err)

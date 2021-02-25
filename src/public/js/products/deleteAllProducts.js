@@ -14,7 +14,7 @@ async function deleteAllProducts() {
                 const data = {
                     "ids": values
                 }
-                const res = await axios.post('http://localhost:3000/products/deleteManyProducts', data)
+                const res = await axios.post('https://tranducbo.herokuapp.com/products/deleteManyProducts', data)
                 if (res.status == 200) {
                     location.reload()
                 }

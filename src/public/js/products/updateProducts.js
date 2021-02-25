@@ -36,7 +36,7 @@ async function updateProduct(event) {
         result.innerHTML = "vui lòng nhập đủ dữ liệu";
     } else {
         try {
-            const res = await axios.patch('http://localhost:3000/products/' + id, formData, {
+            const res = await axios.patch('https://tranducbo.herokuapp.com/products/' + id, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
